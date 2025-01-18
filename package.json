@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-utils",
+  "name": "rollup-utils",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
@@ -8,12 +8,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "zhiyuanzmj/plugins"
+    "url": "zhiyuanzmj/rollup-utils"
   },
   "author": "Rich Harris <richard.a.harris@gmail.com>",
-  "homepage": "https://github.com/zhiyuanzmj/rollup-plugin-utils#readme",
+  "homepage": "https://github.com/zhiyuanzmj/rollup-utils#readme",
   "bugs": {
-    "url": "https://github.com/zhiyuanzmj/rollup-plugin-utils/issues"
+    "url": "https://github.com/zhiyuanzmj/rollup-utils/issues"
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.js",
@@ -36,7 +36,6 @@
     "prepare": "if [ ! -d 'dist' ]; then pnpm build; fi",
     "prerelease": "pnpm build",
     "pretest": "pnpm build --sourcemap",
-    "release": "pnpm --workspace-root package:release $(pwd)",
     "test": "ava",
     "test:ts": "tsc --noEmit"
   },

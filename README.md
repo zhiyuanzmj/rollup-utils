@@ -1,15 +1,15 @@
-[npm]: https://img.shields.io/npm/v/rollup-plugin-utils
-[npm-url]: https://www.npmjs.com/package/rollup-plugin-utils
-[size]: https://packagephobia.now.sh/badge?p=rollup-plugin-utils
-[size-url]: https://packagephobia.now.sh/result?p=rollup-plugin-utils
+[npm]: https://img.shields.io/npm/v/rollup-utils
+[npm-url]: https://www.npmjs.com/package/rollup-utils
+[size]: https://packagephobia.now.sh/badge?p=rollup-utils
+[size-url]: https://packagephobia.now.sh/result?p=rollup-utils
 
 [![npm][npm]][npm-url]
 [![size][size]][size-url]
 [![libera manifesto](https://img.shields.io/badge/libera-manifesto-lightgrey.svg)](https://liberamanifesto.com)
 
-# rollup-plugin-utils
+# rollup-utils
 
-Forked from [@rollup/pluginutils](https://github.com/rollup/plugins/tree/master/packages/pluginutils), using `pathe` instead of the native `path` module to support browser environments.
+Forked from [@rollup/pluginutils](https://github.com/rollup/plugins/tree/master/packages/pluginutils), using [pathe](https://github.com/unjs/pathe) instead of the native `path` module to support browser environments.
 
 A set of utility functions commonly used by 🍣 Rollup plugins.
 
@@ -22,13 +22,13 @@ The plugin utils require an [LTS](https://github.com/nodejs/Release) Node versio
 Using npm:
 
 ```console
-npm install rollup-plugin-utils --save-dev
+npm install rollup-utils --save-dev
 ```
 
 ## Usage
 
 ```js
-import utils from 'rollup-plugin-utils';
+import utils from 'rollup-utils';
 //...
 ```
 
@@ -46,7 +46,7 @@ Parameters: `(filename: String, ext?: String)`<br>
 Returns: `String`
 
 ```js
-import { addExtension } from 'rollup-plugin-utils';
+import { addExtension } from 'rollup-utils';
 
 export default function myPlugin(options = {}) {
   return {
@@ -69,7 +69,7 @@ Returns: `Object`
 See [@rollup/plugin-inject](https://github.com/rollup/plugins/tree/master/packages/inject) or [@rollup/plugin-commonjs](https://github.com/rollup/plugins/tree/master/packages/commonjs) for an example of usage.
 
 ```js
-import { attachScopes } from 'rollup-plugin-utils';
+import { attachScopes } from 'rollup-utils';
 import { walk } from 'estree-walker';
 
 export default function myPlugin(options = {}) {
@@ -123,7 +123,7 @@ Optionally resolves the patterns against a directory other than `process.cwd()`.
 #### Usage
 
 ```js
-import { createFilter } from 'rollup-plugin-utils';
+import { createFilter } from 'rollup-utils';
 
 export default function myPlugin(options = {}) {
   // assume that the myPlugin accepts options of `options.include` and `options.exclude`
@@ -163,7 +163,7 @@ _Note: Please see the TypeScript definition for complete documentation of these 
 #### Usage
 
 ```js
-import { dataToEsm } from 'rollup-plugin-utils';
+import { dataToEsm } from 'rollup-utils';
 
 const esModuleSource = dataToEsm(
   {
@@ -203,7 +203,7 @@ An `acorn` AST Node.
 #### Usage
 
 ```js
-import { extractAssignedNames } from 'rollup-plugin-utils';
+import { extractAssignedNames } from 'rollup-utils';
 import { walk } from 'estree-walker';
 
 export default function myPlugin(options = {}) {
@@ -235,7 +235,7 @@ Returns: `String`
 #### Usage
 
 ```js
-import { makeLegalIdentifier } from 'rollup-plugin-utils';
+import { makeLegalIdentifier } from 'rollup-utils';
 
 makeLegalIdentifier('foo-bar'); // 'foo_bar'
 makeLegalIdentifier('typeof'); // '_typeof'
@@ -251,7 +251,7 @@ Returns: `String`
 #### Usage
 
 ```js
-import { normalizePath } from 'rollup-plugin-utils';
+import { normalizePath } from 'rollup-utils';
 
 normalizePath('foo\\bar'); // 'foo/bar'
 normalizePath('foo/bar'); // 'foo/bar'
