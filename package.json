@@ -11,9 +11,9 @@
     "url": "zhiyuanzmj/plugins"
   },
   "author": "Rich Harris <richard.a.harris@gmail.com>",
-  "homepage": "https://github.com/rollup/plugins/tree/master/packages/pluginutils#readme",
+  "homepage": "https://github.com/zhiyuanzmj/rollup-plugin-utils#readme",
   "bugs": {
-    "url": "https://github.com/rollup/plugins/issues"
+    "url": "https://github.com/zhiyuanzmj/rollup-plugin-utils/issues"
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.js",
