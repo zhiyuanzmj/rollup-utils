@@ -1,4 +1,4 @@
-import { extname, posix, isAbsolute, resolve } from 'pathe';
+import { extname, isAbsolute, resolve, posix } from 'pathe';
 import { walk } from 'estree-walker';
 import pm from 'picomatch';
 
@@ -161,9 +161,8 @@ function ensureArray(thing) {
     return [thing];
 }
 
-const normalizePathRegExp = new RegExp(`\\\\`, 'g');
 const normalizePath = function normalizePath(filename) {
-    return filename.replace(normalizePathRegExp, posix.sep);
+    return filename.replaceAll('\\', '/');
 };
 
 function getMatcherString(id, resolutionBase) {
@@ -171,9 +170,7 @@ function getMatcherString(id, resolutionBase) {
         return normalizePath(id);
     }
     // resolve('') is valid and will default to process.cwd()
-    const basePath = normalizePath(resolve(resolutionBase || ''))
-        // escape all possible (posix + win) path characters that might interfere with regex
-        .replace(/[-^$*+?.()|[\]{}]/g, '\\$&');
+    const basePath = normalizePath(resolve(resolutionBase || ''));
     // Note that we use posix.join because:
     // 1. the basePath has been normalized to use /
     // 2. the incoming glob (id) matcher, also uses /
