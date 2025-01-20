@@ -1,4 +1,4 @@
-import { resolve, posix, isAbsolute } from 'pathe';
+import {resolve,  isAbsolute, posix } from 'pathe';
 
 import pm from 'picomatch';
 
@@ -14,8 +14,6 @@ function getMatcherString(id: string, resolutionBase: string | false | null | un
 
   // resolve('') is valid and will default to process.cwd()
   const basePath = normalizePath(resolve(resolutionBase || ''))
-    // escape all possible (posix + win) path characters that might interfere with regex
-    .replace(/[-^$*+?.()|[\]{}]/g, '\\$&');
   // Note that we use posix.join because:
   // 1. the basePath has been normalized to use /
   // 2. the incoming glob (id) matcher, also uses /
