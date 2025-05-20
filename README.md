@@ -9,7 +9,7 @@
 
 # rollup-utils
 
-Forked from [@rollup/pluginutils](https://github.com/rollup/plugins/tree/master/packages/pluginutils), using [pathe](https://github.com/unjs/pathe) instead of the native `path` module to support browser environments.
+Forked from [@rollup/pluginutils](https://github.com/rollup/plugins/tree/master/packages/pluginutils), using [path-browserify](https://github.com/browserify/path-browserify) instead of the native `path` module to support browser environments.
 
 A set of utility functions commonly used by 🍣 Rollup plugins.
 

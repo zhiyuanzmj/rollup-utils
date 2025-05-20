@@ -1,4 +1,4 @@
-import { extname } from 'pathe';
+import { extname } from 'path-browserify';
 
 import type { AddExtension } from '../types';
 
